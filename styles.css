@@ -60,7 +60,7 @@ button, input, select { font: inherit; }
   box-shadow: var(--shadow);
 }
 
-.brand, .header-actions, .nav, .trust-strip, .hero-ctas, .stats, .floating-cta { display: flex; align-items: center; }
+.brand, .header-actions, .nav, .mobile-actions, .trust-strip, .hero-ctas, .stats, .floating-cta { display: flex; align-items: center; }
 .brand { gap: 10px; font-weight: 800; letter-spacing: .08em; }
 .brand img { width: 44px; height: 44px; border-radius: 8px; }
 .nav { gap: 22px; font-size: 14px; color: rgba(255,255,255,.82); }
@@ -88,6 +88,7 @@ button, input, select { font: inherit; }
 }
 .nav a:hover:after { transform: scaleX(1); }
 .header-actions { gap: 10px; }
+.mobile-actions { display: none; }
 select {
   height: 42px;
   border: 1px solid rgba(255,255,255,.22);
@@ -554,8 +555,18 @@ h3 { font-size: 22px; line-height: 1.15; }
 @media (max-width: 920px) {
   .site-header { height: auto; flex-wrap: wrap; }
   .nav { display: none; }
+  .mobile-actions {
+    display: flex;
+    flex: 1 0 100%;
+    gap: 10px;
+  }
+  .mobile-actions .btn {
+    flex: 1;
+    min-height: 42px;
+    padding: 0 12px;
+  }
   .hero, .split, .about, .lead-machine, .review-stage { grid-template-columns: 1fr; }
-  .hero { padding-top: 150px; }
+  .hero { padding-top: 172px; }
   .hero-media { position: relative; inset: auto; width: 100%; height: 420px; order: 2; grid-row: 2; }
   .hero-card { justify-self: start; width: 100%; max-width: 380px; margin: 0; }
   .pain-grid, .social-grid { grid-template-columns: 1fr; }
@@ -570,7 +581,7 @@ h3 { font-size: 22px; line-height: 1.15; }
   .header-actions { margin-left: auto; }
   .header-actions .btn { display: none; }
   h1 { max-width: 100%; font-size: 38px; line-height: 1.04; overflow-wrap: anywhere; }
-  .hero { padding: 122px 18px 54px; }
+  .hero { padding: 162px 18px 54px; }
   .hero-content { max-width: 100%; }
   .hero-media { height: 340px; }
   .review-card { min-height: 360px; padding: 24px; }
@@ -582,7 +593,7 @@ h3 { font-size: 22px; line-height: 1.15; }
   .callback-form { grid-template-columns: 1fr; padding: 16px; }
   .callback-form button { grid-column: auto; }
   .map-panel { position: relative; right: auto; bottom: auto; width: 100%; border-radius: 0; }
-  .floating-cta { left: 12px; right: 12px; }
+  .floating-cta { display: none; }
   .floating-cta .btn { flex: 1; }
   .cookie-banner { flex-direction: column; align-items: stretch; }
 }
